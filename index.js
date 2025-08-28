@@ -2,7 +2,7 @@
  * 根据当前时间返回不同的延迟值（毫秒）
  * @returns {number} 延迟时间（毫秒）
  */
-function getTimeBasedDelay() {
+export function getTimeBasedDelay() {
     const now = new Date();
     const hour = now.getHours();
     const minutes = now.getMinutes();
@@ -47,6 +47,3 @@ function getTimeBasedDelay() {
     const randomOffset = Math.floor(Math.random() * config.randomRange);
     return config.baseDelay + randomOffset;
 }
-
-// 使用示例
-console.log('当前时间延迟:', getTimeBasedDelay(), '毫秒');
