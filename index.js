@@ -48,4 +48,14 @@ function getTimeBasedDelay() {
     return config.baseDelay + randomOffset;
 }
 
-export default getTimeBasedDelay;
+// 支持 ES 模块导出
+export default {
+    getTimeBasedDelay
+};
+
+// 支持 CommonJS 导出
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        getTimeBasedDelay
+    };
+}
