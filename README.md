@@ -17,14 +17,37 @@ npm install @focusinyou/delayrandom
 
 ## 使用方法
 
+### ES Module (推荐)
+```javascript
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
+// 或者使用默认导出
+import getTimeBasedDelay from '@focusinyou/delayrandom';
+
+// 获取当前时间对应的延迟值
+const delay = getTimeBasedDelay();
+console.log(`当前延迟: ${delay}ms`);
+```
+
+### CommonJS
 ```javascript
 const { getTimeBasedDelay } = require('@focusinyou/delayrandom');
 
 // 获取当前时间对应的延迟值
 const delay = getTimeBasedDelay();
 console.log(`当前延迟: ${delay}ms`);
+```
 
-// 在异步操作中使用
+### 浏览器直接引入
+```html
+<script src="path/to/@focusinyou/delayrandom/index.js"></script>
+<script>
+    const delay = getTimeBasedDelay();
+    console.log(`当前延迟: ${delay}ms`);
+</script>
+```
+
+### 在异步操作中使用
+```javascript
 async function delayedOperation() {
     const delay = getTimeBasedDelay();
     await new Promise(resolve => setTimeout(resolve, delay));
@@ -65,7 +88,7 @@ const delay = getTimeBasedDelay();
 
 ### 1. 网络爬虫
 ```javascript
-const { getTimeBasedDelay } = require('@focusinyou/delayrandom');
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
 
 async function crawlWebsite(urls) {
     for (const url of urls) {
@@ -81,7 +104,7 @@ async function crawlWebsite(urls) {
 
 ### 2. API 请求限流
 ```javascript
-const { getTimeBasedDelay } = require('@focusinyou/delayrandom');
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
 
 async function batchApiCalls(requests) {
     for (const request of requests) {
@@ -96,7 +119,7 @@ async function batchApiCalls(requests) {
 
 ### 3. 自动化测试
 ```javascript
-const { getTimeBasedDelay } = require('@focusinyou/delayrandom');
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
 
 async function simulateUserBehavior() {
     // 模拟用户点击
@@ -108,6 +131,37 @@ async function simulateUserBehavior() {
     
     // 继续其他操作...
 }
+```
+
+## 构建工具支持
+
+### Webpack 项目
+该库完全兼容 Webpack，无需额外配置：
+
+```javascript
+// webpack.config.js - 无需特殊配置
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
+```
+
+### Vite 项目
+该库完全兼容 Vite，支持开箱即用：
+
+```javascript
+// vite.config.js - 无需特殊配置
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
+```
+
+### TypeScript 支持
+虽然本库使用 JavaScript 编写，但提供了完整的类型定义：
+
+```typescript
+// 类型定义
+declare function getTimeBasedDelay(): number;
+
+// 使用示例
+import { getTimeBasedDelay } from '@focusinyou/delayrandom';
+
+const delay: number = getTimeBasedDelay();
 ```
 
 ## 设计理念
@@ -146,3 +200,10 @@ focusinyou
 
 ### v1.0.4
 - 修复文档错误
+
+### v1.0.5
+- 添加多模块系统支持（ES Module、CommonJS、UMD）
+- 完善 webpack 和 vite 项目兼容性
+- 更新 package.json 导出配置
+- 优化文档，添加多种使用方式示例
+- 添加 TypeScript 类型说明
