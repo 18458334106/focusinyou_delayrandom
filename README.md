@@ -207,3 +207,10 @@ focusinyou
 - 更新 package.json 导出配置
 - 优化文档，添加多种使用方式示例
 - 添加 TypeScript 类型说明
+
+### v1.0.6
+- 添加多模块系统支持（ES Module、CommonJS、UMD）
+- 完善 webpack 和 vite 项目兼容性
+- 更新 package.json 导出配置
+- 优化文档，添加多种使用方式示例
+- 添加 TypeScript 类型说明
