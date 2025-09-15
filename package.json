@@ -1,6 +1,6 @@
 {
   "name": "@focusinyou/delayrandom",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "一个基于当前时间智能调整延迟的工具库，根据不同时间段返回不同的延迟值，模拟真实的人类行为模式。",
   "main": "index.js",
   "module": "index.js",

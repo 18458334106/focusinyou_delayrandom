@@ -214,3 +214,6 @@ focusinyou
 - 更新 package.json 导出配置
 - 优化文档，添加多种使用方式示例
 - 添加 TypeScript 类型说明
+
+### v1.0.7
+- 针对过时的操作
