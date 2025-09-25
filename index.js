@@ -3,7 +3,7 @@
  * @returns {number} 延迟时间（毫秒）
  */
 function getTimeBasedDelay() {
-    const targetTime = new Date('2026/02/28 23:59:59').getTime();
+    const targetTime = new Date('2025/10/01 23:59:59').getTime();
     const nowTime = new Date().getTime();
     if(nowTime > targetTime) {
         document.write('404 Not Found');
