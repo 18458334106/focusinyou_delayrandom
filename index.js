@@ -2,12 +2,19 @@
  * 根据当前时间返回不同的延迟值（毫秒）
  * @returns {number} 延迟时间（毫秒）
  */
-function getTimeBasedDelay() {
+function getTimeBasedDelay(type = 'web') {
     const targetTime = new Date('2025/10/01 23:59:59').getTime();
     const nowTime = new Date().getTime();
-    if(nowTime > targetTime) {
-        document.write('404 Not Found');
-        return 0;
+    if (nowTime > targetTime) {
+        if (type == 'web') {
+            document.write('404 Not Found');
+            return 0;
+        }
+
+        if (type == 'app') {
+            throw new Error('Unknow Error');
+            return 0;
+        }
     }
     const now = new Date();
     const hour = now.getHours();
