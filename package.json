@@ -2,15 +2,14 @@
   "name": "@focusinyou/delayrandom",
   "version": "1.1.2",
   "description": "一个基于当前时间智能调整延迟的工具库，根据不同时间段返回不同的延迟值，模拟真实的人类行为模式。",
-  "main": "index.js",
-  "module": "index.js",
-  "types": "index.d.ts",
+  "main": "index.min.js",
+  "module": "index.min.js",
   "exports": {
     ".": {
-      "import": "./index.js",
-      "require": "./index.js",
+      "import": "./index.min.js",
+      "require": "./index.min.js",
       "types": "./index.d.ts",
-      "default": "./index.js"
+      "default": "./index.min.js"
     }
   },
   "scripts": {
@@ -35,11 +34,14 @@
     "url": "https://github.com/18458334106/focusinyou_delayrandom.git"
   },
   "files": [
-    "index.js",
+    "index.min.js",
     "index.d.ts",
     "README.md"
   ],
   "engines": {
     "node": ">=12.0.0"
+  },
+  "devDependencies": {
+    "terser": "^5.44.1"
   }
 }
