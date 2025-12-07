@@ -105,7 +105,7 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 
 // UMD 兼容性导出 (用于浏览器直接引入)
-if (typeof window !== 'undefined') {
+if (typeof window !== 'undefined' && typeof wx === 'undefined' && typeof uni === 'undefined') {
     window.getTimeBasedDelay = getTimeBasedDelay;
     window.formatInfo = formatInfo;
 }

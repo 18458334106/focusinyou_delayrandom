@@ -3,7 +3,7 @@
  * 用于配置 JavaScript 代码混淆和压缩选项
  */
 
-module.exports = {
+export default {
   // 混淆选项
   mangle: {
     // 混淆变量名
